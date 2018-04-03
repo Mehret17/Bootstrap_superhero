@@ -7,9 +7,18 @@ const printToDom = (domString, divId) => {
 const domString = (superheroesArray) => {
     let domString = "";
     superheroesArray.forEach((superheroes) =>{
-        domString += `<div class="card">`;
-        domString +=    `<h1>${superheroes.name}</h1>`;   
+        //domString +=    `<h1></h1>`;  
+        domString += `<div class ="col-sm-3">`; 
+        domString += `<div class="panel panel-default">`;
+        domString +=   `<div class="panel-heading">`;
+        domString +=     `<h3 class="panel-title">${superheroes.name}</h3>`;
         domString += `</div>`;
+        domString += `<div class="panel-body">`;
+        domString +=    `<img class= "charImage" src="${superheroes.image}">`;
+        domString +=     `<p class ='charDescription'>${superheroes.description}</p>`;
+        domString += `</div>`;
+        domString += `</div>`;
+        domString += `</div>`
     });
     printToDom (domString, 'superheroes-card');
 };
